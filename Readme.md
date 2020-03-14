@@ -88,6 +88,8 @@ Very small list of Linux OS's I've used for sensitive data handling.
 
 **Trusted End Node Security**
 
+Note: This website will show up as insecure. This is due to a DOD RootCA that is not publically distributed. Currently the last known medium is May 2019. This is not mean to be a general purpose os. 
+
 This is a DOD MIL distribution. I use this distro to access sensitive intelligence community sites. This DOD site uses its own internal root ca. So you will get errors about the encrypted website being unsecure. Make sure to use the Encrypt DNS application before accessing sensitive material. 
 
 https://www.spi.dod.mil/download.htm
@@ -97,6 +99,27 @@ https://www.spi.dod.mil/download.htm
 Use this distro with caution. It has not been updated since 2016. Its meant for airgapped network testing and accessing sensitive data. Its an interesting project but not really maintained. I do find it noteworthy for what it does. 
 
 https://www.privacy-cd.org/index.html
+
+**Other Sensitive Media handling strategies**
+
+Host/Virtual VM strategies:
+
+Host: (Windows 10)
+
+At Minumum if using Windows your host should be running Windows 10 Professional. This is due to the availability of bitlocker encryption on Windows 10 Pro and above. VM hosts should be encrypted with XTS-AES-128 or XTS-AES-256 for data at rest.
+
+Host should have standalone hardening guidance applied from the Microsoft SCT 1.0
+
+SCT 1.0 Download for Windows 10 1909 >> https://www.microsoft.com/en-us/download/details.aspx?id=55319
+
+How to apply standalone hardening guidance in an automated fashion. The 1903 Instructions work for the 1909 build >> https://github.com/rootsecdev/Microsoft-Blue-Forest/blob/master/Security%20Baselines/StandAloneHardening1903.md
+
+Post Do not Do Checklist
+
+- Do not browse the internet from host
+- Do not stick foreign usb sticks into host
+- Keep Patched and up to date
+- At Minimum software for Host is just virtualization software to keep threat surface low
 
 # NSA privacy focuses disclosures
 
