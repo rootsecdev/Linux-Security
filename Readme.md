@@ -115,3 +115,25 @@ https://usbguard.github.io/
 **USB Keystroke Injection Protection**
 
 https://github.com/google/ukip
+
+# Red Hat 8 Security notes
+
+**Depreciated functionality**
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/8.0_release_notes/rhel-8_0_0_release#deprecated_functionality
+
+Security Notes to depreciated functionality:
+
+- The Digital Signature Algorithm (DSA) is considered deprecated in Red Hat Enterprise Linux 8.
+- SSL2 Client Hello has been deprecated in NSS
+- TLS 1.0 and TLS 1.1 are deprecated
+
+**Strong crypto defaults in RHEL 8 and deprecation of weak crypto algorithms**
+
+https://access.redhat.com/articles/3642912
+
+| Policy Name   | Description |
+| ------------- | ------------- |
+| LEGACY | This policy ensures maximum compatibility with legacy systems; it is less secure and it includes support for TLS 1.0, TLS 1.1, and SSH2 protocols or later. The algorithms DSA, 3DES, and RC4 are allowed, while RSA and Diffie-Hellman parameters are accepted if larger than 1023-bits.  |
+| FUTURE  | The DEFAULT policy is a reasonable default policy for today's standards, aimed for a balance between usability and security. It allows the TLS 1.2 and 1.3 protocols, as well as IKEv2 and SSH2. The RSA and Diffie-Hellman parameters are accepted if larger than 2047-bits.  |
+| FIPS  | Content Cell  |
