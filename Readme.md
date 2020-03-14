@@ -106,3 +106,10 @@ I won't be linking NSA's slide decks of PRISM but you can find it on your own. T
 
 https://prism-break.org/en/
 
+# Linux Security Toolkits
+
+**USB Guard**
+https://usbguard.github.io/
+
+**USB Keystroke Injection Protection**
+https://github.com/google/ukip
