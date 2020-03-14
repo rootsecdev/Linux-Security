@@ -132,8 +132,19 @@ Security Notes to depreciated functionality:
 
 https://access.redhat.com/articles/3642912
 
+Highlighted Notes on setting crypto standards and policies on RH8 Linux systems. 
+
 | Policy Name   | Description |
 | ------------- | ------------- |
 | LEGACY | This policy ensures maximum compatibility with legacy systems; it is less secure and it includes support for TLS 1.0, TLS 1.1, and SSH2 protocols or later. The algorithms DSA, 3DES, and RC4 are allowed, while RSA and Diffie-Hellman parameters are accepted if larger than 1023-bits.  |
-| FUTURE  | The DEFAULT policy is a reasonable default policy for today's standards, aimed for a balance between usability and security. It allows the TLS 1.2 and 1.3 protocols, as well as IKEv2 and SSH2. The RSA and Diffie-Hellman parameters are accepted if larger than 2047-bits.  |
-| FIPS  | Content Cell  |
+| DEFAULT  | The DEFAULT policy is a reasonable default policy for today's standards, aimed for a balance between usability and security. It allows the TLS 1.2 and 1.3 protocols, as well as IKEv2 and SSH2. The RSA and Diffie-Hellman parameters are accepted if larger than 2047-bits.  |
+| FUTURE  | A conservative security level that is believed to withstand any near-term future attacks. The purpose of the policy is for testing infrastructure and applications for their readiness for future strengthening of requirements. The policy is not supposed to be used for general purpose systems. This level does not allow the use of SHA-1 in signature algorithms. The RSA and Diffie-Hellman parameters are accepted if larger than 3071-bits.  |
+| FIPS | A level that conforms to the FIPS140-2 requirements. This policy is used internally by the fips-mode-setup tool which can switch the RHEL system into FIPS140 mode.  |
+
+
+How to set crypto policies other than the DEFAULT on RH8 systems:
+
+```
+update-crypto-policies --set LEGACY
+```
+
