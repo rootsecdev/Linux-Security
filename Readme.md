@@ -119,7 +119,7 @@ Post Do not Do Checklist
 - Do not browse the internet from host
 - Do not stick foreign usb sticks into host
 - Keep Patched and up to date
-- At Minimum software for Host is just virtualization software to keep threat surface low
+- Keep Host software minimized. If at all possible nothing more than Virtualzation Software. 
 
 # NSA privacy focuses disclosures
 
